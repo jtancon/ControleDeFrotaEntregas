@@ -1,0 +1,76 @@
+<!-- Grid for KPIs -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+    <!-- Total de Viagens (Mês) -->
+    <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
+        <h3 class="text-sm font-medium text-gray-400">Total de Entregas (Mês Atual)</h3>
+        <p id="total-viagens-mes" class="text-2xl font-bold text-white mt-2">0</p>
+    </div>
+    <!-- Ganhos do Mês (Viagens) -->
+    <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
+        <h3 class="text-sm font-medium text-gray-400">Ganhos do Mês (Viagens)</h3>
+        <p id="ganhos-mes-viagens" class="text-2xl font-bold text-white mt-2">€ 0,00</p>
+    </div>
+    <!-- Total de Colaboradores -->
+    <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
+        <h3 class="text-sm font-medium text-gray-400">Total de Colaboradores</h3>
+        <p id="total-colaboradores" class="text-2xl font-bold text-white mt-2">0</p>
+    </div>
+    <!-- Pagamentos do Mês (Colaboradores) -->
+    <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
+        <h3 class="text-sm font-medium text-gray-400">Pagamentos do Mês (Colaboradores)</h3>
+        <p id="pagamentos-mes-colaboradores" class="text-2xl font-bold text-white mt-2">€ 0,00</p>
+    </div>
+</div>
+
+<!-- Desempenho Diário (Mês Atual) -->
+<div class="bg-gray-800 p-6 rounded-lg shadow-lg mb-8">
+    <h3 class="text-lg font-semibold text-white mb-4">Desempenho Diário (Mês Atual)</h3>
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div>
+            <h4 class="text-md font-semibold text-center text-gray-300 mb-2">Ganhos Diários (Viagens)</h4>
+            <div class="h-80">
+                <canvas id="ganhos-diarios-chart"></canvas>
+            </div>
+        </div>
+        <div>
+            <h4 class="text-md font-semibold text-center text-gray-300 mb-2">Pagamentos Diários (Colaboradores)</h4>
+            <div class="h-80">
+                <canvas id="pagamentos-diarios-chart"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Análises Gerais -->
+<h2 class="text-2xl font-bold text-white mb-6">Análises Gerais</h2>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+    <!-- Entregas por Dia da Semana -->
+    <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
+        <h3 class="text-lg font-semibold text-white mb-4">Entregas por Dia da Semana (Total)</h3>
+        <div class="h-80">
+            <canvas id="deliveriesPerDayChart"></canvas>
+        </div>
+    </div>
+    <!-- Ganhos por Zona -->
+    <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
+        <h3 class="text-lg font-semibold text-white mb-4">Ganhos por Zona de Operação (Total)</h3>
+        <div class="h-80">
+            <canvas id="earningsByZoneChart"></canvas>
+        </div>
+    </div>
+    <!-- Pagamentos por Colaborador -->
+    <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
+        <h3 class="text-lg font-semibold text-white mb-4">Pagamentos por Colaborador (Mês Atual)</h3>
+        <div class="h-80">
+            <canvas id="paymentsByEmployeeChart"></canvas>
+        </div>
+    </div>
+    <!-- Dias Trabalhados -->
+    <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
+        <h3 class="text-lg font-semibold text-white mb-4">Dias Trabalhados por Colaborador (Mês Atual)</h3>
+        <div class="h-80">
+            <canvas id="daysWorkedByEmployeeChart"></canvas>
+        </div>
+    </div>
+</div>
+

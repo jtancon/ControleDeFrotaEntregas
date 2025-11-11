@@ -1,0 +1,86 @@
+<h2 class="text-3xl font-bold text-white mb-6">Controle de Ganhos e Viagens</h2>
+
+<div class="bg-gray-800 p-6 rounded-xl mb-6">
+    <h3 class="text-xl font-semibold mb-4">Lançar Nova Viagem</h3>
+    <form id="trip-form" class="grid grid-cols-1 md:grid-cols-4 gap-4">
+        <div>
+            <label for="trip-date" class="block text-sm font-medium text-gray-300 mb-1">Data</label>
+            <input type="date" id="trip-date" required class="w-full bg-gray-700 border-gray-600 text-white rounded-lg p-2.5 focus:ring-blue-500 focus:border-blue-500">
+        </div>
+        <div>
+            <label for="trip-count" class="block text-sm font-medium text-gray-300 mb-1">Nº de Viagens</label>
+            <input type="number" id="trip-count" min="1" required class="w-full bg-gray-700 border-gray-600 text-white rounded-lg p-2.5 focus:ring-blue-500 focus:border-blue-500">
+        </div>
+        <div>
+            <label for="trip-zone" class="block text-sm font-medium text-gray-300 mb-1">Zona</label>
+            <select id="trip-zone" required class="w-full bg-gray-700 border-gray-600 text-white rounded-lg p-2.5 focus:ring-blue-500 focus:border-blue-500">
+                <option value="A">Zona A</option>
+                <option value="B">Zona B</option>
+                <option value="C">Zona C</option>
+                <option value="Green">Zona Green</option>
+            </select>
+        </div>
+        <div class="md:self-end">
+            <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2.5 px-4 rounded-lg transition-colors">Adicionar</button>
+        </div>
+    </form>
+</div>
+
+<div>
+    <h3 class="text-xl font-semibold mb-4">Histórico de Ganhos</h3>
+    <div class="bg-gray-800 rounded-xl overflow-hidden">
+        <div class="overflow-x-auto">
+            <table class="w-full text-sm text-left">
+                <thead class="bg-gray-700 text-xs text-gray-300 uppercase">
+                    <tr>
+                        <th scope="col" class="px-6 py-3">Data</th>
+                        <th scope="col" class="px-6 py-3">Dia</th>
+                        <th scope="col" class="px-6 py-3">Viagens</th>
+                        <th scope="col" class="px-6 py-3">Zona</th>
+                        <th scope="col" class="px-6 py-3">Ganhos</th>
+                        </tr>
+                </thead>
+                <tbody id="trip-history-body">
+                    </tbody>
+                <tfoot>
+                    <tr class="font-semibold text-white bg-gray-700">
+                        <td colspan="4" class="px-6 py-3 text-right">Total do Período:</td>
+                        <td class="px-6 py-3" id="total-earnings-trips">€ 0,00</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div id="edit-trip-modal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4">
+    <div class="bg-gray-800 p-6 rounded-xl shadow-lg w-full max-w-lg">
+        <h3 class="text-xl font-semibold mb-4 text-white">Editar Viagem</h3>
+        <form id="edit-trip-form">
+            <input type="hidden" id="edit-trip-id">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div>
+                    <label for="edit-trip-date" class="block text-sm font-medium text-gray-300 mb-1">Data</label>
+                    <input type="date" id="edit-trip-date" required class="w-full bg-gray-700 border-gray-600 text-white rounded-lg p-2.5">
+                </div>
+                <div>
+                    <label for="edit-trip-count" class="block text-sm font-medium text-gray-300 mb-1">Nº de Viagens</label>
+                    <input type="number" id="edit-trip-count" min="1" required class="w-full bg-gray-700 border-gray-600 text-white rounded-lg p-2.5">
+                </div>
+                <div>
+                    <label for="edit-trip-zone" class="block text-sm font-medium text-gray-300 mb-1">Zona</label>
+                    <select id="edit-trip-zone" required class="w-full bg-gray-700 border-gray-600 text-white rounded-lg p-2.5">
+                        <option value="A">Zona A</option>
+                        <option value="B">Zona B</option>
+                        <option value="C">Zona C</option>
+                        <option value="Green">Zona Green</option>
+                    </select>
+                </div>
+            </div>
+            <div class="mt-6 flex justify-end gap-4">
+                <button type="button" id="cancel-edit-btn" class="bg-gray-600 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded-lg">Cancelar</button>
+                <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg">Salvar Alterações</button>
+            </div>
+        </form>
+    </div>
+</div>
